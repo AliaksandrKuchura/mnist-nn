@@ -61,7 +61,7 @@ public class MnistImage {
     public String toString() {
         return "MnistImage{" +
                 "label=" + label +
-                ", data=" + Arrays.toString(data) +
+                ", data=" + Arrays.deepToString(data) +
                 '}';
     }
 }

@@ -15,9 +15,9 @@ import java.util.List;
  * Created by Aliaksandr Kuchura on Aug, 2020
  */
 
-public class MnistLoader implements Loader {
+public class MnistDataLoader implements DataLoader {
 
-    private static final Logger logger = LogManager.getLogger(MnistLoader.class);
+    private static final Logger logger = LogManager.getLogger(MnistDataLoader.class);
 
     private static final int IMAGE_MAGIC_NUMBER = 2051;
 

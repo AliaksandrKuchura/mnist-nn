@@ -15,9 +15,9 @@ import static org.junit.jupiter.api.Assertions.*;
  * Created by Aliaksandr Kuchura on Aug, 2020
  */
 
-class MnistLoaderTest {
+class MnistDataLoaderTest {
 
-    private MnistLoader loader = new MnistLoader();
+    private MnistDataLoader loader = new MnistDataLoader();
 
     @Test
     void loadFromFiles() {
