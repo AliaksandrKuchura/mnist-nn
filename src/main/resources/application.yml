@@ -1,0 +1,18 @@
+# Spring application property
+server:
+  port: 80
+
+
+# Neural network configuration
+perceptron:
+  learningRate: 0.1
+
+  layers:
+    - name: Input
+      size: 784
+    - name: Hidden 1
+      size: 28
+    - name: Hidden 2
+      size: 28
+    - name: Output
+      size: 10
