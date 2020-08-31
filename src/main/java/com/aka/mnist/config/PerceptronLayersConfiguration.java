@@ -26,10 +26,15 @@ public class PerceptronLayersConfiguration {
 
     private List<Layer> layers = new ArrayList<>();
 
+    public int countLayers(){
+        return layers.size();
+    }
+
+
     @Data
     @Component
     @ConfigurationProperties(prefix = "perceptron.layers")
-    private static class Layer {
+    public static class Layer {
 
         private String name;
 
