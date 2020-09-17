@@ -15,8 +15,8 @@ public class SigmoidActivationFunction implements ActivationFunction {
     }
 
     @Override
-    public double countDifferential(double x) {
-        return sigmoid(x) / (1 - sigmoid(x));
+    public double applyDerivative(double x) {
+        return sigmoid(x) * (1 - sigmoid(x));
     }
 
     private double sigmoid(double x) {

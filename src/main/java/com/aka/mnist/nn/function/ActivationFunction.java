@@ -6,7 +6,7 @@ package com.aka.mnist.nn.function;
 
 public interface ActivationFunction {
 
-    public double apply(double x);
+    double apply(double x);
 
-    public double countDifferential(double x);
+    double applyDerivative(double x);
 }
