@@ -13,6 +13,6 @@ public class RandomWeightSupplier implements Supplier<Double> {
 
     @Override
     public Double get() {
-        return Math.random();
+        return Math.random() * 2 - 1;
     }
 }
