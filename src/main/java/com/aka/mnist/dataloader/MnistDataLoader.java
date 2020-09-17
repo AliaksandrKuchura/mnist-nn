@@ -2,6 +2,7 @@ package com.aka.mnist.dataloader;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -15,6 +16,7 @@ import java.util.List;
  * Created by Aliaksandr Kuchura on Aug, 2020
  */
 
+@Component
 public class MnistDataLoader implements DataLoader {
 
     private static final Logger logger = LogManager.getLogger(MnistDataLoader.class);

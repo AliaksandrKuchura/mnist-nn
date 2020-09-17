@@ -3,7 +3,8 @@ package com.aka.mnist.dataloader;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Objects;
 
 /**
  * Created by Aliaksandr Kuchura on Aug, 2020
@@ -13,31 +14,30 @@ import java.util.*;
 @Setter
 public class MnistImage {
 
+    public static final int MAX_DATA_VALUE = 255;
+
     private byte label;
 
     private int[][] data;
 
-    public MnistImage(byte label, int[][] data) {
+    MnistImage(byte label, int[][] data) {
         this.label = label;
         this.data = data;
     }
 
-    public List<Integer> getDataAsList() {
-        int rowSize = data.length;
+    public int[] getDataAsVector() {
+        int rows = data.length;
 
-        if (rowSize > 0) {
-            List<Integer> result = new ArrayList<>();
+        if (rows > 0) {
+            int columns = data[1].length;
+            int[] dataArray = new int[rows * columns];
 
-            for (int i = 0; i < rowSize; i++) {
-                int columnSize = data[i].length;
-
-                for (int j = 0; j < columnSize; j++) {
-                    result.add(data[i][j]);
-                }
+            for (int i = 0; i < rows; i++) {
+                System.arraycopy(data[i], 0, dataArray, i * columns, columns);
             }
-            return result;
+            return dataArray;
         } else {
-            return Collections.emptyList();
+            return new int[0];
         }
     }
 
