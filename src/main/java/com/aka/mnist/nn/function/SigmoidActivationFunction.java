@@ -19,7 +19,7 @@ public class SigmoidActivationFunction implements ActivationFunction {
         return sigmoid(x) * (1 - sigmoid(x));
     }
 
-    private double sigmoid(double x) {
+    double sigmoid(double x) {
         return 1 / (1 + Math.exp(-x));
     }
 }

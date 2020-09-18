@@ -1,4 +1,4 @@
-package com.aka.mnist.utils;
+package com.aka.mnist.util;
 
 /**
  * Created by Aliaksandr Kuchura on Aug, 2020

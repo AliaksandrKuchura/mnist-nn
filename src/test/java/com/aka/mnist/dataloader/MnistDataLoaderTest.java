@@ -1,6 +1,6 @@
 package com.aka.mnist.dataloader;
 
-import com.aka.mnist.utils.ByteConverter;
+import com.aka.mnist.util.ByteConverter;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
