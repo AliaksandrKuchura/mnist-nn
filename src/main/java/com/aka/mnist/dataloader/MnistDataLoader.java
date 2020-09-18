@@ -28,13 +28,13 @@ public class MnistDataLoader implements DataLoader {
     @Override
     public List<MnistImage> loadFromFiles(String imagesFilePath, String labelsFilePath) {
         try {
-            logger.info(String.format("Loading images from file '%s'...", imagesFilePath));
+            logger.info("Loading images from file '{}'...", imagesFilePath);
             List<int[][]> imageMatrices = loadImageMatrices(imagesFilePath);
-            logger.info(String.format("Images from file '%s' loaded", imagesFilePath));
+            logger.info("Images from file '{}' loaded", imagesFilePath);
 
-            logger.info(String.format("Loading labels from file '%s'...", labelsFilePath));
+            logger.info("Loading labels from file '{}'...", labelsFilePath);
             List<Byte> labels = loadLabels(labelsFilePath);
-            logger.info(String.format("Labels from file '%s' loaded", labelsFilePath));
+            logger.info("Labels from file '{}' loaded", labelsFilePath);
 
             return convertToMnistImageList(labels, imageMatrices);
         } catch (UnsupportedOperationException e) {
@@ -43,7 +43,7 @@ public class MnistDataLoader implements DataLoader {
         return Collections.emptyList();
     }
 
-    List<Byte> loadLabels(String labelsFilePath) throws UnsupportedOperationException {
+    List<Byte> loadLabels(String labelsFilePath) {
         try {
             ByteBuffer buffer = readFile(labelsFilePath);
             int magicNumber = buffer.getInt();
@@ -77,7 +77,7 @@ public class MnistDataLoader implements DataLoader {
         }
     }
 
-    List<int[][]> loadImageMatrices(String imagesFilePath) throws UnsupportedOperationException {
+    List<int[][]> loadImageMatrices(String imagesFilePath) {
         try {
             ByteBuffer buffer = readFile(imagesFilePath);
             int magicNumber = buffer.getInt();
@@ -120,8 +120,7 @@ public class MnistDataLoader implements DataLoader {
         return Collections.emptyList();
     }
 
-    List<MnistImage> convertToMnistImageList(List<Byte> labelList, List<int[][]> imageMatrixList)
-            throws UnsupportedOperationException {
+    List<MnistImage> convertToMnistImageList(List<Byte> labelList, List<int[][]> imageMatrixList) {
         int labelSize = labelList.size();
         int imageMatrixSize = imageMatrixList.size();
 
