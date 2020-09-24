@@ -21,7 +21,7 @@ public class ActivationFunctionDerivativeVisitor implements RealMatrixChangingVi
 
     @Override
     public void start(int rows, int columns, int startRow, int endRow, int startColumn, int endColumn) {
-
+        // NO SONAR
     }
 
     @Override

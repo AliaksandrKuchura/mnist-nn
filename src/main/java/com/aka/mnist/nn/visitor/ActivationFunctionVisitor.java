@@ -21,7 +21,7 @@ public class ActivationFunctionVisitor implements RealMatrixChangingVisitor {
 
     @Override
     public void start(int rows, int columns, int startRow, int endRow, int startColumn, int endColumn) {
-
+        // NO SONAR
     }
 
     @Override

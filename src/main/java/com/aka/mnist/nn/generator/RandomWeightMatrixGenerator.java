@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Supplier;
+import java.util.function.DoubleSupplier;
 
 /**
  * Created by Aliaksandr Kuchura on Sep, 2020
@@ -17,10 +17,10 @@ import java.util.function.Supplier;
 @Component
 public class RandomWeightMatrixGenerator implements WeightMatrixGenerator {
 
-    private Supplier<Double> weightSupplier;
+    private DoubleSupplier weightSupplier;
 
     @Autowired
-    public RandomWeightMatrixGenerator(Supplier<Double> weightSupplier) {
+    public RandomWeightMatrixGenerator(DoubleSupplier weightSupplier) {
         this.weightSupplier = weightSupplier;
     }
 
@@ -47,7 +47,7 @@ public class RandomWeightMatrixGenerator implements WeightMatrixGenerator {
         double[][] values = new double[rows][columns];
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                values[i][j] = weightSupplier.get();
+                values[i][j] = weightSupplier.getAsDouble();
             }
         }
         return values;

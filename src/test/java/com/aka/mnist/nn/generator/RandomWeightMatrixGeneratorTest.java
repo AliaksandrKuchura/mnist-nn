@@ -14,7 +14,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Supplier;
+import java.util.function.DoubleSupplier;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -29,7 +29,7 @@ class RandomWeightMatrixGeneratorTest {
     ApplicationContext context;
 
     @Mock
-    private Supplier<Double> supplier;
+    private DoubleSupplier supplier;
 
     private RandomWeightMatrixGenerator generator;
 
@@ -41,7 +41,7 @@ class RandomWeightMatrixGeneratorTest {
     @Test
     void createListFromConfig() {
         double weight = 1.0;
-        Mockito.doReturn(weight).when(supplier).get();
+        Mockito.doReturn(weight).when(supplier).getAsDouble();
         List<Layer> layers = Arrays.asList(
                 new Layer("test", 4),
                 new Layer("test", 3),

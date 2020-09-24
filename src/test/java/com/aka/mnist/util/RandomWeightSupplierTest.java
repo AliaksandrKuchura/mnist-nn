@@ -15,7 +15,7 @@ class RandomWeightSupplierTest {
     @Test
     void get() {
         for (int i = 0; i < 10; i++) {
-            Double value = supplier.get();
+            Double value = supplier.getAsDouble();
             assertTrue(value > -1);
             assertTrue(value < 1);
         }

@@ -11,8 +11,6 @@ perceptron:
     - name: Input
       size: 784
     - name: Hidden 1
-      size: 28
-    - name: Hidden 2
-      size: 28
+      size: 112
     - name: Output
       size: 10

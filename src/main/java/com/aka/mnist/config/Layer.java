@@ -1,7 +1,9 @@
 package com.aka.mnist.config;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -9,7 +11,9 @@ import org.springframework.stereotype.Component;
  * Created by Aliaksandr Kuchura on Sep, 2020
  */
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 @AllArgsConstructor
 @Component
 @ConfigurationProperties(prefix = "perceptron.layers")

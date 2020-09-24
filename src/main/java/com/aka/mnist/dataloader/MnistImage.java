@@ -25,6 +25,10 @@ public class MnistImage {
         this.data = data;
     }
 
+    public MnistImage(int[][] data) {
+        this.data = data;
+    }
+
     public int[] getDataAsVector() {
         int rows = data.length;
 
@@ -53,7 +57,7 @@ public class MnistImage {
     @Override
     public int hashCode() {
         int result = Objects.hash(label);
-        result = 31 * result + Arrays.hashCode(data);
+        result = 31 * result + Arrays.deepHashCode(data);
         return result;
     }
 
