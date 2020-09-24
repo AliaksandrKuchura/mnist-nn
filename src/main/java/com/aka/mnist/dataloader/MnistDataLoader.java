@@ -73,7 +73,8 @@ public class MnistDataLoader implements DataLoader {
         ) {
             ByteBuffer buffer = ByteBuffer.allocate((int) channel.size());
             channel.read(buffer);
-            return (ByteBuffer) buffer.flip();
+            buffer.flip();
+            return buffer;
         }
     }
 
